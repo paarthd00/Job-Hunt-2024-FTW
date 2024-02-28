@@ -1,3 +1,2 @@
-# Leet Code
-
-https://leetcode.com/problems/two-sum/solutions/4788073/two-sum-solution
+# Blind 75 Leet Code Problem Solutios
+https://www.techinterviewhandbook.org/best-practice-questions/
