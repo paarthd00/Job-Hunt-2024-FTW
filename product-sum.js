@@ -13,7 +13,7 @@
 
 //time complexity is O(n) where n is the total number of elements in the array including sub-elements
 
-function getSpecialArraySum(array, depth = 1) {
+function productSum(array, depth = 1) {
   return (
     array.reduce((sum, el) => {
       if (Array.isArray(el)) {
@@ -26,4 +26,4 @@ function getSpecialArraySum(array, depth = 1) {
 }
 
 const array = [5, 2, [7, -1], 3, [6, [-13, 8], 4]];
-console.log(getSum(array)); // 12
+console.log(productSum(array)); // 12
