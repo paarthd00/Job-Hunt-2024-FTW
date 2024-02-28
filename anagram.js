@@ -32,7 +32,12 @@
 
 
 //Best Solution
-
+/**
+ * Space Complexity: O(26) (or simply O(1)).
+ * 
+ * time complexity: O(n), where n is the length of the longer input string
+ * 
+ */
 const isAnagram = (s, t) => {
     if (s.length !== t.length)  return false;
   
