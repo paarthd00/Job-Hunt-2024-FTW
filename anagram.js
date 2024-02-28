@@ -1,3 +1,37 @@
+//Best Solution
+/**
+ * Space Complexity: O(26) (or simply O(1)).
+ *
+ * time complexity: O(n), where n is the length of the longer input string
+ *
+ */
+const isAnagram = (s, t) => {
+    if (s.length !== t.length) return false;
+  
+    const sCharMap = createCharMap(s);
+    const tCharMap = createCharMap(t);
+    // check if the two char maps are equal
+    // by checking if the frequency of each character in s is equal to the frequency of the same character in t
+    return Object.keys(sCharMap).every(
+      (char) => sCharMap[char] === tCharMap[char]
+    );
+  };
+  
+  const createCharMap = (str) => {
+    return str.split("").reduce((charMap, char) => {
+      charMap[char] = (charMap[char] || 0) + 1;
+      return charMap;
+    }, {});
+  };
+
+
+
+const s = "anagram";
+const t = "nagaram";
+
+console.log(isAnagram(s, t));
+
+
 // const isAnagram = (s, t) => {
 //   if (s.length !== t.length) {
 //     return false;
@@ -29,36 +63,9 @@
 //   return charMap;
 // };
 
-//Best Solution
-/**
- * Space Complexity: O(26) (or simply O(1)).
- *
- * time complexity: O(n), where n is the length of the longer input string
- *
- */
-const isAnagram = (s, t) => {
-  if (s.length !== t.length) return false;
 
-  const sCharMap = createCharMap(s);
-  const tCharMap = createCharMap(t);
-  console.log(sCharMap);
-  console.log(tCharMap);
-  return Object.keys(sCharMap).every(
-    (char) => sCharMap[char] === tCharMap[char]
-  );
-};
 
-const createCharMap = (str) => {
-  return str.split("").reduce((charMap, char) => {
-    charMap[char] = (charMap[char] || 0) + 1;
-    return charMap;
-  }, {});
-};
 
-const s = "anagram";
-const t = "nagaram";
-
-console.log(isAnagram(s, t));
 
 /**
  const isAnagram = (s, t) => {
