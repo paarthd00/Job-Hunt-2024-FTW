@@ -29,32 +29,31 @@
 //   return charMap;
 // };
 
-
-
 //Best Solution
 /**
  * Space Complexity: O(26) (or simply O(1)).
- * 
+ *
  * time complexity: O(n), where n is the length of the longer input string
- * 
+ *
  */
 const isAnagram = (s, t) => {
-    if (s.length !== t.length)  return false;
-  
-    const sCharMap = createCharMap(s);
-    const tCharMap = createCharMap(t);
-    console.log(sCharMap);
-    console.log(tCharMap);  
-    return Object.keys(sCharMap).every((char) => sCharMap[char] === tCharMap[char]);
-  };
-  
-  const createCharMap = (str) => {
-    return str.split('').reduce((charMap, char) => {
-      charMap[char] = (charMap[char] || 0) + 1;
-      return charMap;
-    }, {});
-  };
-  
+  if (s.length !== t.length) return false;
+
+  const sCharMap = createCharMap(s);
+  const tCharMap = createCharMap(t);
+  console.log(sCharMap);
+  console.log(tCharMap);
+  return Object.keys(sCharMap).every(
+    (char) => sCharMap[char] === tCharMap[char]
+  );
+};
+
+const createCharMap = (str) => {
+  return str.split("").reduce((charMap, char) => {
+    charMap[char] = (charMap[char] || 0) + 1;
+    return charMap;
+  }, {});
+};
 
 const s = "anagram";
 const t = "nagaram";
